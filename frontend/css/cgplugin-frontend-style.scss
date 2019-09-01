@@ -5,37 +5,40 @@
  */
 
 .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE {
-	// border: 1rem dotted red;
+	// border: 1rem dotted hotpink;
+	
 	.category-bar {
 		// border: 1rem solid red;
 		padding: 1rem;
 		background-color: #DF5400;
 		display: flex;
 		justify-content: center;
-	}
 
-	.category-form {
+		.category-form {
 
-		border: 1px solid white;
-		padding: 1rem !important;
+			border: 1px solid white;
+			padding: 1rem !important;
 
-		select {
-			// border: 1rem dotted red;
-			background: transparent;
-			border: none;
-			color: white;
+			select {
+				border: 1rem dotted red;
+				background: transparent;
+				border: none;
+				color: white;
 
-			option {
+				option {
+				}
 			}
+
 		}
 
+		.left-category-form {
+			margin-right: 1rem;
+		}
+
+		.right-category-form {
+
+		}		
 	}
 
-	.left-category-form {
-		margin-right: 1rem;
-	}
 
-	.right-category-form {
-
-	}
 }

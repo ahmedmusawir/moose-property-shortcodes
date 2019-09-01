@@ -9,16 +9,17 @@
   display: flex;
   justify-content: center;
 }
-.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-form {
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .category-form {
   border: 1px solid white;
   padding: 1rem !important;
 }
-.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-form select {
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .category-form select {
+  border: 1rem dotted red;
   background: transparent;
   border: none;
   color: white;
 }
-.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .left-category-form {
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .left-category-form {
   margin-right: 1rem;
 }
 
