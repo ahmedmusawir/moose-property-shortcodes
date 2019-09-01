@@ -1,0 +1,25 @@
+/**
+ *
+ * Property GoogleMap Category Display Styles
+ *
+ */
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar {
+  padding: 1rem;
+  background-color: #DF5400;
+  display: flex;
+  justify-content: center;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-form {
+  border: 1px solid white;
+  padding: 1rem !important;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-form select {
+  background: transparent;
+  border: none;
+  color: white;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .left-category-form {
+  margin-right: 1rem;
+}
+
+/*# sourceMappingURL=cgplugin-frontend-style.css.map */
