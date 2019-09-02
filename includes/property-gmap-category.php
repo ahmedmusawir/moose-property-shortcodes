@@ -172,7 +172,11 @@ if (!isset($_POST['categories']) && !isset($_POST['status']) ) {
 			$selected = $_POST['categories'];
 			// echo $selected  . "<br>";
 			// echo $taxonomy_name;
-		}		
+		}	
+
+
+
+			
 
 	?> 
 
@@ -218,7 +222,7 @@ if (!isset($_POST['categories']) && !isset($_POST['status']) ) {
 
 			/* fixes potential theme css conflict */
 			.acf-map img {
-			   max-width: inherit !important;
+			   width: 100%;
 			}
 
 			</style>
@@ -228,7 +232,50 @@ if (!isset($_POST['categories']) && !isset($_POST['status']) ) {
 			if ($front_page_post_items->have_posts()): /* Start the Loop */ 
 			    while ($front_page_post_items->have_posts()):
 			        $front_page_post_items->the_post();
+
+			/**
+			 *
+			 * GETING TAXONOMIES - PROPERTY STATUS & TYPES 
+			 *
+			 */
+			
+			 $terms = get_the_terms( get_the_ID(), 'listing-status' );
+
+			 // print_r($terms);
+
+			 if ( $terms && ! is_wp_error( $terms ) ) {
+
+				 $draught_links = array();
+
+				 foreach ( $terms as $term ) {
+					 $draught_links[] = $term->name;
+				 }
+
+				 $status = join( ", ", $draught_links );
+			}
+
+			 $terms = get_the_terms( get_the_ID(), 'property-type' );
+
+			 // print_r($terms);
+
+			 if ( $terms && ! is_wp_error( $terms ) ) {
+
+				 $draught_links = array();
+
+				 foreach ( $terms as $term ) {
+					 $draught_links[] = $term->name;
+				 }
+
+				 $types = join( ", ", $draught_links );
+				
+			}
+
+			// END GETTING TAXONOMIES  
+
+			// ADDING NEW IMAGE SIZE 
+
 			?>
+
 
 					<div class="col-sm-12 col-md-12 col-lg-12">
 
@@ -237,19 +284,50 @@ if (!isset($_POST['categories']) && !isset($_POST['status']) ) {
 
 						<?php 
 
-								$mapLocation = get_field('location');
+							$mapLocation = get_field('location');
 
 						?>	
 
 
 						    <div class="marker" data-lat="<?php echo $mapLocation['lat'] ?>" data-lng="<?php echo $mapLocation['lng']; ?>">
-						    	<a href="<?php the_permalink(); ?>">
-						    		<figure style="width: 50% !important;">
-							    		<?php the_post_thumbnail( 'blog-size' ); ?>
-							    	</figure>
-							    	<h6><?php the_title(); ?></h6>
-							    	<?php echo $mapLocation['address']; ?>
-						    	</a>
+						    	
+								<article class="map-pin-box">
+
+							    	<a href="<?php the_permalink(); ?>">
+
+
+										<div class="map-pin-content-listing-status">
+								
+											<span><?php echo $status; ?></span>
+
+										</div>						    		
+							    		<figure style="width: 100% !important;">
+								    		<?php the_post_thumbnail( 'blog-size' ); ?>
+								    	</figure>							    				
+					    				
+
+
+					    				<h5 class="map-pin-title"><?php the_title(); ?></h5>
+								    	<h6 class="map-pin-address"><?php echo $mapLocation['address']; ?></h6>
+
+
+										<div class="map-pin-content-property-types">
+											<span class="type">PROPERTY TYPE: <?php echo $types; ?></span>
+											<span class="psf badge badge-dark float-right">$ <?php the_field('psf'); ?> psf </span>
+										</div>
+
+
+										<div class="map-pin-property-excerpt">
+											<?php
+											// <!-- CONTENT -->
+												the_excerpt();
+											?>
+										</div>			
+								    							
+
+							    	</a>
+
+						    	</article>
 						    </div>
 							
 						<?php 	endwhile;
@@ -260,7 +338,6 @@ if (!isset($_POST['categories']) && !isset($_POST['status']) ) {
 
 						?>
 
-						
 						</div> <!-- ACF-MAP END -->						
 							
 					</div> <!-- END col-sm-12 col-md-12 col-lg-6 -->

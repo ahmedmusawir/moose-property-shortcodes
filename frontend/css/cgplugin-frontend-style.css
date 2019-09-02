@@ -9,6 +9,11 @@
   display: flex;
   justify-content: center;
 }
+@media (max-width: 640px) {
+  .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar {
+    display: block;
+  }
+}
 .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .category-form {
   border: 1px solid white;
   padding: 1rem !important;
@@ -19,8 +24,73 @@
   border: none;
   color: white;
 }
+@media (max-width: 640px) {
+  .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .category-form {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
 .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .left-category-form {
   margin-right: 1rem;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box {
+  position: relative;
+}
+@media (min-width: 640px) {
+  .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box {
+    width: 300px !important;
+  }
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-content-listing-status {
+  position: absolute;
+  top: -32px;
+  padding: 0.5rem 2rem;
+  background-color: #DF5400;
+  color: white;
+  margin-top: 2rem;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-address {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-content-property-types {
+  background-color: #DF5400;
+  color: white;
+  padding: 1rem;
+  font-weight: 800;
+  font-size: 0.7rem;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-content-property-types .psf {
+  font-size: 0.7rem;
+}
+@media (max-width: 400px) {
+  .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-content-property-types .psf {
+    display: block;
+    float: none !important;
+    margin-top: 0.5rem;
+  }
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-property-excerpt {
+  margin-top: 1rem;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-property-excerpt p {
+  font-size: 0.8rem;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-property-excerpt p a {
+  color: black;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .map-pin-box .map-pin-property-excerpt p .moretag {
+  padding: 0.5rem 2rem;
+  background-color: black;
+  color: white;
+  margin-top: 2rem;
+  float: right;
+  border-radius: 20px;
 }
 
 /*# sourceMappingURL=cgplugin-frontend-style.css.map */
