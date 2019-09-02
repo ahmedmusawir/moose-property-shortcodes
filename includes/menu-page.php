@@ -8,8 +8,7 @@ if ( ! defined( 'WPINC' ) ) {
   die;
 }
 
-function wpplugin_settings_pages()
-{
+function wpplugin_settings_pages() {
 
   add_submenu_page(
     'edit.php?post_type=properties',
@@ -23,8 +22,7 @@ function wpplugin_settings_pages()
 add_action( 'admin_menu', 'wpplugin_settings_pages' );
 
 
-function wpplugin_settings_page_markup()
-{
+function wpplugin_settings_page_markup() {
   // Double check user capabilities
   if ( !current_user_can('manage_options') ) {
       return;
@@ -128,30 +126,39 @@ function wpplugin_settings_subpage_markup()
   <?php
 }
 
-
-function wpplugin_default_sub_pages() {
-
-  // Can add page as a submenu using the following:
-  // add_dashboard_page()
-  // add_posts_page()
-  // add_media_page()
-  // add_pages_page()
-  // add_comments_page()
-  // add_theme_page()
-  // add_plugins_page()
-  // add_users_page()
-  // add_management_page()
-  // add_options_page()
-
-  add_dashboard_page(
-    __( 'Cool Default Sub Page', 'wpplugin' ),
-    __( 'Custom Sub Page', 'wpplugin' ),
-    'manage_options',
-    'wpplugin-subpage',
-    'wpplugin_settings_page_markup'
-  );
-
+// Add a link to your settings page in your plugin
+function wpplugin_add_settings_link( $links ) {
+    $settings_link = '<a href="edit.php?post_type=properties&page=property-shortcode">' . __( 'Settings', 'wpplugin' ) . '</a>';
+    array_push( $links, $settings_link );
+    return $links;
 }
-add_action( 'admin_menu', 'wpplugin_default_sub_pages' );
+$filter_name = "plugin_action_links_" . plugin_basename( __FILE__ );
+add_filter( $filter_name, 'wpplugin_add_settings_link' );
+
+
+// function wpplugin_default_sub_pages() {
+
+//   // Can add page as a submenu using the following:
+//   // add_dashboard_page()
+//   // add_posts_page()
+//   // add_media_page()
+//   // add_pages_page()
+//   // add_comments_page()
+//   // add_theme_page()
+//   // add_plugins_page()
+//   // add_users_page()
+//   // add_management_page()
+//   // add_options_page()
+
+//   add_dashboard_page(
+//     __( 'Cool Default Sub Page', 'wpplugin' ),
+//     __( 'Custom Sub Page', 'wpplugin' ),
+//     'manage_options',
+//     'wpplugin-subpage',
+//     'wpplugin_settings_page_markup'
+//   );
+
+// }
+// add_action( 'admin_menu', 'wpplugin_default_sub_pages' );
 
 ?>

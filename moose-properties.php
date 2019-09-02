@@ -23,6 +23,9 @@ include( plugin_dir_path( __FILE__ ) . 'includes/property-shortcodes-styles.php'
 // Enqueue Plugin JavaScript
 // include( plugin_dir_path( __FILE__ ) . 'includes/property-shortcodes-scripts.php');
 
+// Create Properties Custom Post Type with Taxonomies (property-type & listing-status)
+include( plugin_dir_path( __FILE__ ) . 'includes/properties-cpt.php');
+
 // Create Plugin Admin Menus and Setting Pages
 include( plugin_dir_path( __FILE__ ) . 'includes/menu-page.php');
 
