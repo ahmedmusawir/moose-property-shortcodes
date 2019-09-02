@@ -24,7 +24,13 @@ include( plugin_dir_path( __FILE__ ) . 'includes/property-shortcodes-styles.php'
 // include( plugin_dir_path( __FILE__ ) . 'includes/property-shortcodes-scripts.php');
 
 // Create Plugin Admin Menus and Setting Pages
-// include( plugin_dir_path( __FILE__ ) . 'includes/property-shortcodes-menus.php');
+include( plugin_dir_path( __FILE__ ) . 'includes/menu-page.php');
+
+// Create Google Map with Property List Shortcode
+include( plugin_dir_path( __FILE__ ) . 'includes/property-list.php');
+
+// Create Google Map with Property Google Map List
+include( plugin_dir_path( __FILE__ ) . 'includes/property-gmap-list.php');
 
 // Create Google Map with Property Categories
 include( plugin_dir_path( __FILE__ ) . 'includes/property-gmap-category.php');
