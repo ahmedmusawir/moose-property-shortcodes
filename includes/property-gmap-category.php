@@ -174,10 +174,6 @@ if (!isset($_POST['categories']) && !isset($_POST['status']) ) {
 			// echo $taxonomy_name;
 		}	
 
-
-
-			
-
 	?> 
 
 <!-- CATETORY SELECT BAR -->
@@ -208,8 +204,8 @@ if (!isset($_POST['categories']) && !isset($_POST['status']) ) {
 </section>
 
 <!-- THE GOOGLE MAP CODE AND STYLES -->
-	<div class="content-holder container-fluid">
-		<div class="row">
+	<div class="content-holder">
+		<div class="">
 
 			<style type="text/css">
 
@@ -275,9 +271,7 @@ if (!isset($_POST['categories']) && !isset($_POST['status']) ) {
 			// ADDING NEW IMAGE SIZE 
 
 			?>
-
-
-					<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="">
 
 						<!-- ACF MAP START -->
 						<div class="acf-map">
