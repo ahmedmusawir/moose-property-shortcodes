@@ -19,10 +19,12 @@
   padding: 1rem !important;
 }
 .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .category-form select {
-  border: 1rem dotted red;
   background: transparent;
   border: none;
   color: white;
+}
+.CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .category-form select option {
+  color: black !important;
 }
 @media (max-width: 640px) {
   .CG-GOOGLEMAP-CATEGORY-BOX-SHORTCODE .category-bar .category-form {

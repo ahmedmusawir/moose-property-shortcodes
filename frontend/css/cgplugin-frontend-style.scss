@@ -22,16 +22,19 @@ $bg-color: #DF5400;
 
 		.category-form {
 
+			// border: 1px solid pink;
 			border: 1px solid white;
 			padding: 1rem !important;
 
 			select {
-				border: 1rem dotted red;
+				// border: 1rem dotted red;
 				background: transparent;
 				border: none;
 				color: white;
 
 				option {
+					color: black !important;
+					// border: 3px dotted red;
 				}
 			}
 

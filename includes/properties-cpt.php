@@ -14,6 +14,8 @@ if ( ! defined( 'WPINC' ) ) {
  * Adding Custom Property post type
  *
  */
+ 
+
  /**
    * Register a Property post type, with REST API support
    *
